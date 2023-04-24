@@ -8,7 +8,7 @@ class JobParameters {
         println("Job Parameters")
     }
 
-    def run = { ->
+    void run(){
         println("Job Parameters Run")
     }
 }

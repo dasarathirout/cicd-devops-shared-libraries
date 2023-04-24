@@ -14,7 +14,7 @@ class DriverMain {
         println new DriverMain().getBuild
     }
 
-    static void init(){
+    void init(){
         new JobParameters().run()
         new JobBuilder().run()
         new StageBuilder().run()

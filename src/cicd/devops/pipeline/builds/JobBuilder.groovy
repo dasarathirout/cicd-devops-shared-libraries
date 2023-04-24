@@ -8,7 +8,7 @@ class JobBuilder {
         println("Job Builder")
     }
 
-    def run = { ->
+    void run(){
         println("Job Builder Run")
     }
 }
