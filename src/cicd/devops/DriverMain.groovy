@@ -15,9 +15,9 @@ class DriverMain {
     }
 
     static void init(){
-        new JobParameters().run
-        new JobBuilder().run
-        new StageBuilder().run
+        new JobParameters().run()
+        new JobBuilder().run()
+        new StageBuilder().run()
     }
 
     def run = { Closure body ->
