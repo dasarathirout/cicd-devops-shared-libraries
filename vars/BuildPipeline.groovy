@@ -8,7 +8,7 @@ def call(Closure body){
 def startJobBuild(String projectName) {
     timestamps{
         println('#####################')
-        new DriverMain().run()
+        new DriverMain().init()
         println('=====================')
     }
 }
