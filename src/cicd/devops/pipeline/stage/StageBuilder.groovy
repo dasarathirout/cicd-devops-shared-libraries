@@ -8,7 +8,7 @@ class StageBuilder {
         println("Stage Builder")
     }
 
-    StageBuilder getStageBuilder(){
-        return this.stageBuilder;
+    def run = { ->
+        println("Job Builder Run")
     }
 }

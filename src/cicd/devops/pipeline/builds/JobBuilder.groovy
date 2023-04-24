@@ -8,7 +8,7 @@ class JobBuilder {
         println("Job Builder")
     }
 
-    JobBuilder getJobBuilder(){
-        return this.jobBuilder;
+    def run = { ->
+        println("Job Builder Run")
     }
 }

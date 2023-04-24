@@ -11,17 +11,16 @@ class DriverMain {
     }
 
     static void main(String[] args) {
-        init()
         println new DriverMain().getBuild
     }
 
-    public static void init(){
-        println(new JobParameters().getJobParameters())
-        println(new JobBuilder().getJobBuilder())
-        println(new StageBuilder().getStageBuilder())
+    static void init(){
+        new JobParameters().run
+        new JobBuilder().run
+        new StageBuilder().run
     }
 
-    def run(Closure body) {
-
+    def run = { Closure body ->
+        init()
     }
 }

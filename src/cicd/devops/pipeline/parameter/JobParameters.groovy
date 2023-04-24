@@ -8,7 +8,7 @@ class JobParameters {
         println("Job Parameters")
     }
 
-    JobParameters getJobParameters(){
-        return this.jobParameters
+    def run = { ->
+        println("Job Parameters Run")
     }
 }
