@@ -3,11 +3,12 @@ package cicd.devops.pipeline.parameter
 class JobParameters {
 
     private JobParameters jobParameters;
-    public JobParameters(){
+
+    JobParameters(){
         println("Job Parameters")
     }
 
-    public JobParameters getJobParameters(){
+    JobParameters getJobParameters(){
         return this.jobParameters
     }
 }

@@ -4,11 +4,11 @@ class StageBuilder {
 
     private StageBuilder stageBuilder;
 
-    public StageBuilder(){
+    StageBuilder(){
         println("Stage Builder")
     }
 
-    public StageBuilder getStageBuilder(){
+    StageBuilder getStageBuilder(){
         return this.stageBuilder;
     }
 }

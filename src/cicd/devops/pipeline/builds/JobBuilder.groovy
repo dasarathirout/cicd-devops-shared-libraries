@@ -3,11 +3,12 @@ package cicd.devops.pipeline.builds
 class JobBuilder {
 
     private JobBuilder jobBuilder;
-    public JobBuilder(){
+
+    JobBuilder(){
         println("Job Builder")
     }
 
-    public JobBuilder getJobBuilder(){
+    JobBuilder getJobBuilder(){
         return this.jobBuilder;
     }
 }
