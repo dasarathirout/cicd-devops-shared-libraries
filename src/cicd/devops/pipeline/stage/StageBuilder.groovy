@@ -6,7 +6,6 @@ class StageBuilder {
 
     public StageBuilder(){
         println("Stage Builder")
-        stageBuilder= new StageBuilder();
     }
 
     public StageBuilder getStageBuilder(){

@@ -5,7 +5,6 @@ class JobParameters {
     private JobParameters jobParameters;
     public JobParameters(){
         println("Job Parameters")
-        jobParameters= new JobParameters()
     }
 
     public JobParameters getJobParameters(){

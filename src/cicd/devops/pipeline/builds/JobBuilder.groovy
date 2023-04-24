@@ -5,7 +5,6 @@ class JobBuilder {
     private JobBuilder jobBuilder;
     public JobBuilder(){
         println("Job Builder")
-        this.jobBuilder = new JobBuilder()
     }
 
     public JobBuilder getJobBuilder(){
