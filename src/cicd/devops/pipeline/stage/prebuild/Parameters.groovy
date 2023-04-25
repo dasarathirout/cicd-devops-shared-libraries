@@ -13,7 +13,7 @@ class Parameters extends PipelineStage{
     @Override
     Object run() {
         return stage("Build Parameters") {
-            jenkinsPipeline.println("★★★ RAW CONFIGS : ${config.toString()}")
+            jenkinsPipeline.println("Build Parameters : ${jenkinsParameters}")
         }
     }
 }

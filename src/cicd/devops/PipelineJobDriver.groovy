@@ -50,8 +50,8 @@ class PipelineJobDriver {
             body.resolveStrategy = Closure.DELEGATE_ONLY
             body.delegate = config
             body()
-            BuildParameters parameters = BuildParameters.getBuildParametersFrom(jenkinsPipeline, config)
-            return parameters
+            jenkinsPipeline.println("CONFIG : ${config}")
+            return BuildParameters.getBuildParametersFrom(jenkinsPipeline, config)
         } catch (Throwable e) {
             jenkinsPipeline.println("${e}")
             throw e
