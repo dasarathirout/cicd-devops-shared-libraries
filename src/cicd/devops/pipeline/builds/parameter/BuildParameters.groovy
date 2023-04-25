@@ -17,10 +17,6 @@ class BuildParameters implements JenkinsParameters {
         this.isDeployable = isDeployable
     }
 
-    void run(){
-        println("Job Parameters Run")
-    }
-
     @Override
     String artifactName() {
         return this.projectName
@@ -72,6 +68,22 @@ class BuildParameters implements JenkinsParameters {
     }
 
     static BuildParameters getBuildParametersFrom(JenkinsPipeline jenkinsPipeline, Map configParams){
-        return new BuildParameters(configParams.ENV as String, configParams.PROJECT_NAME as String, configParams.REPORT as Boolean, configParams.DEPLOY as Boolean)
+        return new BuildParameters(
+                configParams.ENV as String,
+                configParams.PROJECT_NAME as String,
+                configParams.REPORT as Boolean,
+                configParams.DEPLOY as Boolean
+        )
+    }
+
+    @Override
+    String toString() {
+        return """
+        BuildParameters{
+            environment='$environment', 
+            projectName='$projectName', 
+            doGenerateReport=$doGenerateReport, 
+            isDeployable=$isDeployable
+        }"""
     }
 }

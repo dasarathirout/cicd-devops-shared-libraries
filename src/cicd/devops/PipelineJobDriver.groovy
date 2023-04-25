@@ -38,9 +38,9 @@ class PipelineJobDriver {
     void initialiseBuild(BuildParameters parameters) {
         List<PipelineStage> buildStages = PipelineStageBuilder.preparePipelineStages(this.jenkinsPipeline, parameters)
         for (PipelineStage stage : buildStages) {
-            jenkinsPipeline.println("✅✅✅✅✅✅✅✅ BEFORE STAGE ${stage.getClass().name} BUILD STATUS = ${jenkinsPipeline.buildStatus()} ✅✅✅✅✅✅✅✅")
+            jenkinsPipeline.println("${COMMON.MESSAGE_LOG_LINE} BEFORE STAGE ${stage.getClass().name} BUILD STATUS = ${jenkinsPipeline.buildStatus()} ${COMMON.MESSAGE_LOG_LINE}")
             stage.run()
-            jenkinsPipeline.println("✅✅✅✅✅✅✅✅ AFTER STAGE ${stage.getClass().name} BUILD STATUS = ${jenkinsPipeline.buildStatus()} ✅✅✅✅✅✅✅✅")
+            jenkinsPipeline.println("${COMMON.MESSAGE_LOG_LINE} AFTER STAGE ${stage.getClass().name} BUILD STATUS = ${jenkinsPipeline.buildStatus()} ${COMMON.MESSAGE_LOG_LINE}")
         }
     }
 
