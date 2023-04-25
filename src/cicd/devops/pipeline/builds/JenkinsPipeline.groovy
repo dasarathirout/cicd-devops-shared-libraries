@@ -41,4 +41,26 @@ class JenkinsPipeline {
             }
         }
     }
+
+    void shell(String script) {
+        pipelineContext.sh(script)
+    }
+
+    void writeFile(String fileName, String fileTextContents) {
+        shell("echo '${fileTextContents}' > ${fileName}")
+    }
+
+    String shellOutput(String script) {
+        return pipelineContext.sh(script: script, returnStdout: true)
+                .toString().trim()
+    }
+
+    Object withEnv(Object env, Closure action) {
+        return pipelineContext.withEnv(env, action)
+    }
+
+    String readFile(String fileName) {
+        return pipelineContext.readFile(fileName)
+    }
+
 }
