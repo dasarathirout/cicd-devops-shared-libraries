@@ -72,6 +72,8 @@ class JenkinsPipeline {
     }
 
     void checkoutCode() {
-        return pipelineContext.checkoutCode()
+        retry(3) {
+            pipelineContext.checkout pipelineContext.scm
+        }
     }
 }
