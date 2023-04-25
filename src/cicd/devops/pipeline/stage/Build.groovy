@@ -14,6 +14,7 @@ class Build extends PipelineStage{
         return stage("Build") {
             jenkinsPipeline.println("==== Gradle Build ====")
             jenkinsPipeline.shell("whoami")
+            jenkinsPipeline.shell("cd")
             jenkinsPipeline.shell("dir")
             jenkinsPipeline.shell("gradle clean build test")
         }
