@@ -13,6 +13,8 @@ class Build extends PipelineStage{
     Object run() {
         return stage("Build") {
             jenkinsPipeline.println("==== Gradle Build ====")
+            jenkinsPipeline.shell("pwd")
+            jenkinsPipeline.shell("dir")
             jenkinsPipeline.shell("gradle clean build test")
         }
     }
