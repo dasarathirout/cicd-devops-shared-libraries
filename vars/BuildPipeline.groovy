@@ -1,14 +1,9 @@
-import cicd.devops.*
+import cicd.devops.PipelineJobDriver
 
-def call(Closure body){
-    println(body)
-    startJobBuild('projectName')
-}
+import cicd.devops.pipeline.builds.JenkinsPipeline
 
-def startJobBuild(String projectName) {
+def call(Closure body) {
     timestamps{
-        println('#####################')
-        new DriverMain().init()
-        println('=====================')
+        new PipelineJobDriver(new JenkinsPipeline(this)).run(body)
     }
 }
