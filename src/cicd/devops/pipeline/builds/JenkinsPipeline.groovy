@@ -43,7 +43,11 @@ class JenkinsPipeline {
     }
 
     void shell(String script) {
-        pipelineContext.sh(script)
+        if(pipelineContext.isUnix()){
+            pipelineContext.sh(script)
+        }else{
+            pipelineContext.bat(script)
+        }
     }
 
     void writeFile(String fileName, String fileTextContents) {
