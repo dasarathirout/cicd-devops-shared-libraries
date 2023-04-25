@@ -11,7 +11,7 @@ class Deploy extends PipelineStage{
     @Override
     Object run() {
         return stage("Deploy") {
-            jenkinsPipeline.println("★★★ Deploy Build ★★★")
+            jenkinsPipeline.println("==== Deploy Build ====")
         }
     }
 }

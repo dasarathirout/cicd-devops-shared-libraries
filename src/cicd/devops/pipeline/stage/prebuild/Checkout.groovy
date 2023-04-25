@@ -13,7 +13,7 @@ class Checkout extends PipelineStage{
     @Override
     Object run() {
         return stage("Code Checkout") {
-            jenkinsPipeline.println("★★★ CODE CHECKOUT ★★★")
+            jenkinsPipeline.println("===== CODE CHECKOUT =====")
         }
     }
 }

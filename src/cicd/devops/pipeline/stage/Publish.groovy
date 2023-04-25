@@ -11,7 +11,7 @@ class Publish extends PipelineStage{
     @Override
     Object run() {
         return stage("Publish") {
-            jenkinsPipeline.println("★★★ Publish Gradle Build ★★★")
+            jenkinsPipeline.println("==== Publish Gradle Build ====")
         }
     }
 }

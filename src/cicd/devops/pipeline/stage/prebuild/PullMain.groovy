@@ -13,7 +13,7 @@ class PullMain extends PipelineStage{
     @Override
     Object run() {
         return stage("Pull Latest Code") {
-            jenkinsPipeline.println("★★★ PULL LATEST CODE ★★★")
+            jenkinsPipeline.println("==== PULL LATEST CODE ===")
         }
     }
 }

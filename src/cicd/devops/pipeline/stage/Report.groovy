@@ -11,7 +11,7 @@ class Report extends PipelineStage{
     @Override
     Object run() {
         return stage("Report") {
-            jenkinsPipeline.println("★★★ Report Build  & Publish ★★★")
+            jenkinsPipeline.println("==== Report Build  & Publish ====")
         }
     }
 }

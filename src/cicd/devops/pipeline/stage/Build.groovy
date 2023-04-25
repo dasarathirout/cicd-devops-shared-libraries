@@ -12,7 +12,7 @@ class Build extends PipelineStage{
     @Override
     Object run() {
         return stage("Build") {
-            jenkinsPipeline.println("★★★ Gradle Build ★★★")
+            jenkinsPipeline.println("==== Gradle Build ====")
         }
     }
 }
