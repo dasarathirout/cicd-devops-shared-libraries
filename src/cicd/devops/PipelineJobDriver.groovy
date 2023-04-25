@@ -24,7 +24,7 @@ class PipelineJobDriver {
                            "K8S_DEPLOYED"          : false]
         BuildParameters buildParameters = initialiseParameters(body)
         try {
-            jenkinsPipeline.println("parameters, ${buildParameters.toString()}")
+            jenkinsPipeline.println("${buildParameters.toString()}")
             initialiseBuild(buildParameters)
             jenkinsPipeline.println(COMMON.MESSAGE_BUILD_PASSED)
         } catch (Throwable e) {
