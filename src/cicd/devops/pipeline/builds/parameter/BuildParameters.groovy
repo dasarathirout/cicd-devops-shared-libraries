@@ -10,7 +10,7 @@ class BuildParameters implements JenkinsParameters {
     private final boolean doGenerateReport
     private final boolean isDeployable
 
-    BuildParameters(String environment, String projectName, boolean generateReport, boolean isDeployable){
+    BuildParameters(String environment, String projectName, boolean generateReport, boolean isDeployable) {
         this.environment = environment
         this.projectName = projectName
         this.doGenerateReport = generateReport
@@ -29,7 +29,7 @@ class BuildParameters implements JenkinsParameters {
 
     @Override
     String artifactVersion() {
-        return "${getArtifactType(this.branchName())+"-"+this.buildNumber()}"
+        return "${getArtifactType(this.branchName()) + "-" + this.buildNumber()}"
     }
 
     @Override
@@ -56,8 +56,8 @@ class BuildParameters implements JenkinsParameters {
         return "JOB_NAME"
     }
 
-    static String getArtifactType(String branchName){
-        switch (branchName.toUpperCase()){
+    static String getArtifactType(String branchName) {
+        switch (branchName.toUpperCase()) {
             case "MAIN":
                 return 'RELEASE'
             case "MASTER":
@@ -67,7 +67,7 @@ class BuildParameters implements JenkinsParameters {
         }
     }
 
-    static BuildParameters getBuildParametersFrom(JenkinsPipeline jenkinsPipeline, Map configParams){
+    static BuildParameters getBuildParametersFrom(JenkinsPipeline jenkinsPipeline, Map configParams) {
         return new BuildParameters(
                 configParams.ENV as String,
                 configParams.PROJECT_NAME as String,
@@ -78,12 +78,11 @@ class BuildParameters implements JenkinsParameters {
 
     @Override
     String toString() {
-        return """
-        BuildParameters{
-            environment='$environment', 
-            projectName='$projectName', 
-            doGenerateReport=$doGenerateReport, 
-            isDeployable=$isDeployable
-        }"""
+        return " BuildParameters {" +
+                " environment=${environment}," +
+                " projectName=${projectName}," +
+                " doGenerateReport=${doGenerateReport}," +
+                " isDeployable=${isDeployable}" +
+                "} "
     }
 }
