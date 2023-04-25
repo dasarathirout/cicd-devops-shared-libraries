@@ -67,4 +67,11 @@ class JenkinsPipeline {
         return pipelineContext.readFile(fileName)
     }
 
+    void cleanWorkspace() {
+        return pipelineContext.cleanWs()
+    }
+
+    void checkoutCode() {
+        return pipelineContext.checkoutCode()
+    }
 }

@@ -14,6 +14,8 @@ class Checkout extends PipelineStage{
     Object run() {
         return stage("Code Checkout") {
             jenkinsPipeline.println("===== CODE CHECKOUT =====")
+            jenkinsPipeline.cleanWorkspace()
+            jenkinsPipeline.checkoutCode()
         }
     }
 }
