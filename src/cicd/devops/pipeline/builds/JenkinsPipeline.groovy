@@ -1,6 +1,7 @@
 package cicd.devops.pipeline.builds
 
 import cicd.devops.constants.COMMON
+import cicd.devops.pipeline.builds.report.PublishHTML
 import cicd.devops.pipeline.metadata.BuildStatus
 
 class JenkinsPipeline {
@@ -75,5 +76,24 @@ class JenkinsPipeline {
         pipelineContext.retry(3) {
             pipelineContext.checkout pipelineContext.scm
         }
+    }
+
+    void checkPathExists(String checkPath) {
+        println("Asserting that path exists: ${checkPath}")
+        if (!pipelineContext.fileExists(checkPath)) {
+            throw new RuntimeException("Assertion Failed, ${checkPath} was expected to exist, but it doesn't.")
+        }
+        shell("ls ${checkPath}")
+    }
+
+    String getWorkspaceDirectory() {
+        return pipelineContext.env.WORKSPACE
+    }
+
+    void publishHtmlReport(PublishHTML report) {
+        shell("ls ${report.getReportDir()}")
+        checkPathExists(report.reportFiles)
+        Object target = report.targetPublishObject()
+        pipelineContext.publishHTML target: target
     }
 }
