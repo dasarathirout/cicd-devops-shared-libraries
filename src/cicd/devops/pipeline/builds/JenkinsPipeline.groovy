@@ -91,7 +91,7 @@ class JenkinsPipeline {
     }
 
     void publishHtmlReport(PublishHTML report) {
-        shell("ls ${report.getReportDir()}")
+        shell("dir ${report.getReportDir()}")
         checkPathExists(report.reportFiles)
         Object target = report.targetPublishObject()
         pipelineContext.publishHTML target: target
