@@ -33,7 +33,7 @@ class Publish extends PipelineStage{
             ))
 
             jenkinsPipeline.publishHtmlReport(new PublishHTML(
-                    jenkinsPipeline.getWorkspaceDirectory()+"\\service-one\\build\\reports\\test\\test",
+                    jenkinsPipeline.getWorkspaceDirectory()+"\\service-two\\build\\reports\\test\\test",
                     "index.html",
                     "service-two"
             ))
