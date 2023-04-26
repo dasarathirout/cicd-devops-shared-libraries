@@ -15,25 +15,25 @@ class Publish extends PipelineStage{
             jenkinsPipeline.println("==== Publish Gradle Build ====")
 
             jenkinsPipeline.publishHtmlReport(new PublishHTML(
-                    jenkinsPipeline.getWorkspaceDirectory()+"/service-database/build/reports/tests/test",
+                    jenkinsPipeline.getWorkspaceDirectory()+"\\service-database\\build\\reports\\tests\\test",
                     "index.html",
                     "service-database"
             ))
 
             jenkinsPipeline.publishHtmlReport(new PublishHTML(
-                    jenkinsPipeline.getWorkspaceDirectory()+"/service-zero/build/reports/tests/test",
+                    jenkinsPipeline.getWorkspaceDirectory()+"\\service-zero\\build\\reports\\tests\\test",
                     "index.html",
                     "service-zero"
             ))
 
             jenkinsPipeline.publishHtmlReport(new PublishHTML(
-                    jenkinsPipeline.getWorkspaceDirectory()+"/service-one/build/reports/tests/test",
+                    jenkinsPipeline.getWorkspaceDirectory()+"\\service-one\\build\\reports\\tests\\test",
                     "index.html",
                     "service-one"
             ))
 
             jenkinsPipeline.publishHtmlReport(new PublishHTML(
-                    jenkinsPipeline.getWorkspaceDirectory()+"/service-one/build/reports/tests/test",
+                    jenkinsPipeline.getWorkspaceDirectory()+"\\service-one\\build\\reports\\test\\test",
                     "index.html",
                     "service-two"
             ))
