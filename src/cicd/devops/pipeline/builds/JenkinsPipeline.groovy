@@ -4,6 +4,9 @@ import cicd.devops.constants.COMMON
 import cicd.devops.pipeline.builds.report.PublishHTML
 import cicd.devops.pipeline.metadata.BuildStatus
 
+import java.nio.file.Path
+import java.nio.file.Paths
+
 class JenkinsPipeline {
     private final Object pipelineContext
 
@@ -92,7 +95,7 @@ class JenkinsPipeline {
 
     void publishHtmlReport(PublishHTML report) {
         shell("dir ${report.getReportDir()}")
-        checkPathExists(report.reportFiles)
+        checkPathExists(report.reportDir+ File.separator +report.reportFiles)
         Object target = report.targetPublishObject()
         pipelineContext.publishHTML target: target
     }
