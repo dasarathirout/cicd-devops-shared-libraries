@@ -83,7 +83,7 @@ class JenkinsPipeline {
         if (!pipelineContext.fileExists(checkPath)) {
             throw new RuntimeException("Assertion Failed, ${checkPath} was expected to exist, but it doesn't.")
         }
-        shell("ls ${checkPath}")
+        shell("dir ${checkPath}")
     }
 
     String getWorkspaceDirectory() {
